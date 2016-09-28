@@ -1,1 +1,23 @@
 name: NoOpsCommands
+main: Plugin\load.php
+version: 1.0
+api: 1.11.0
+author: TableStudio Team
+persissions:
+plugin.*:
+  default: false
+  description: "Allow all commands"
+  children:
+    plugin.commands.op
+      default: false
+      descriptoin: "allow to give/take op"
+    plugin.commands.gamemode
+      default: false
+      descriptiom: "Allow all gamemodes perm."
+      children: 
+        plugin.commands.gamemode.use:
+          default: op
+          description: "Allow to change gamemode only him"
+        plugin.commands.gamemode.other
+          default: false
+          description: "Allow too change gm all players"
